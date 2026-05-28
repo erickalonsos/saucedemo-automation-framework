@@ -25,7 +25,7 @@ public class LoginTest extends BaseTest {
     public void loginTest() throws IOException {
         LoginPage loginPage = new LoginPage(driver);
         String titleProducts = loginPage.login(utility.configReader("username"), utility.configReader("password"));
-        Assert.assertEquals(titleProducts, "Products","No estás en la página de products");
+        Assert.assertEquals(titleProducts, "Products","No estás en la página products");
     }
 
 }

@@ -18,7 +18,9 @@ public class InvalidLoginTest extends BaseTest {
     @Test
     public void invalidLogin() throws IOException {
         InvalidLoginPage invalidLogin = new InvalidLoginPage(driver);
-        Assert.assertTrue(true, invalidLogin.invalidLogin(utility.configReader("username"),(utility.configReader("password"))));
+        invalidLogin.invalidLogin(utility.configReader("username_error"),(utility.configReader("password_error")));
+        boolean isDisplayed = invalidLogin.isErrorMsgDisplayed();
+        Assert.assertTrue(isDisplayed, "No se mostró el error al realizar un login inválido");
 
     }
 
